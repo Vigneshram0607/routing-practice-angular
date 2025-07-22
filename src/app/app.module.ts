@@ -14,6 +14,8 @@ import { UserComponent } from './users/user/user.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { AuthGuard } from './auth-guard.service';
+import { AuthService } from './auth.service';
 
 
 @NgModule({
@@ -33,7 +35,7 @@ import { BrowserModule } from '@angular/platform-browser';
     AppRoutingModule,
     RouterModule
   ],
-  providers: [ServersService],
+  providers: [ServersService, AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
